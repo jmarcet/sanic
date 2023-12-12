@@ -60,7 +60,6 @@ from sanic.server import Signal as ServerSignal
 from sanic.server import try_use_uvloop
 from sanic.server.async_server import AsyncioServer
 from sanic.server.events import trigger_events
-from sanic.server.loop import try_windows_loop
 from sanic.server.protocols.http_protocol import HttpProtocol
 from sanic.server.protocols.websocket_protocol import WebSocketProtocol
 from sanic.server.runners import serve
@@ -107,8 +106,6 @@ class StartupMixin(metaclass=SanicMeta):
                 and not OS_IS_WINDOWS
             ):
                 try_use_uvloop()
-            elif OS_IS_WINDOWS:
-                try_windows_loop()
 
     @property
     def m(self) -> WorkerMultiplexer:
