@@ -89,7 +89,7 @@ requirements = [
     uvloop,
     ujson,
     "aiofiles>=0.6.0",
-    "websockets>=10.0",
+    "websockets<11.0",
     "multidict>=5.0,<7.0",
 ]
 
