@@ -1,13 +1,13 @@
 import asyncio
 
-from distutils.util import strtobool
-from os import getenv
-
 from sanic.compat import OS_IS_WINDOWS
 from sanic.log import error_logger
 
 
 def try_use_uvloop() -> None:
+    from distutils.util import strtobool
+    from os import getenv
+
     """
     Use uvloop instead of the default asyncio loop.
     """
